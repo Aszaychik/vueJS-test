@@ -6,6 +6,7 @@
 const app = new Vue({
   el: "#app",
   data: {
+    imgClass: 'img-thumbnail img-fluid mb-3',
     maximum: 1999,
     products: null,
     cart: [],

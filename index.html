@@ -35,13 +35,15 @@
 
       <section class="mb-3 d-flex row align-items-center p-3" v-for="product in products" :key="product.id" v-if="product.price <= Number(maximum)">
         <figure class="col-sm-4 text-center">
-          <img class="img-thumbnail img-fluid mb-3" :src="product.thumbnail" :alt="product.title" width="200" height="200" />
-          <button class="btn btn-info" v-on:click="addCart(product)">+</button>
+          <img :class="imgClass" :src="product.thumbnail" :alt="product.title" width="200" height="200" />
         </figure>
         <figcaption class="col">
           <h2 class="text-info">{{ product.title }}</h2>
-          <p class="mb-0">{{ product.description }}</p>
-          <p class="h5 float-right">${{ product.price }}</p>
+          <p class="mb-3">{{ product.description }}</p>
+          <div class="d-flex flex-row justify-content-around align-items-center">
+            <p class="h5">Price ${{ product.price }}</p>
+            <button class="btn btn-info" v-on:click="addCart(product)">Add to cart</button>
+          </div>
         </figcaption>
       </section>
     </main>
