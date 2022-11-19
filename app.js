@@ -6,7 +6,7 @@
 const app = new Vue({
   el: "#app",
   data: {
-    maximum: 4269,
+    maximum: 1999,
     products: null,
     cart: [],
   },
@@ -18,4 +18,9 @@ const app = new Vue({
         console.log('data :>> ', data.products);
       })
   },
+  methods: {
+    addCart: function (product) {
+      this.cart.push(product);
+    }
+  }
 });
