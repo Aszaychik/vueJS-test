@@ -15,7 +15,7 @@
         <input class="form-control w-25" type="number" name="maxPrice" id="maxPrice" v-model="maximum" />
       </section>
       <input type="range" name="" id="" class="custom-range" min="0" max="4269" v-model="maximum" />
-      <article class="mb-3 d-flex row align-items-center p-3" v-for="product in products" v-if="item.price <= Number(maximum)">
+      <article class="mb-3 d-flex row align-items-center p-3" v-for="product in products" :key="product.id" v-if="product.price <= Number(maximum)">
         <figure class="col-sm-4 text-center">
           <img class="img-thumbnail img-fluid" :src="product.thumbnail" :alt="name" width="200" height="200" />
         </figure>
