@@ -10,15 +10,15 @@
 
   <body class="">
     <section class="container" id="app">
-      <article class="mb-3 d-flex row align-items-center p-3" v-for="item in products">
+      <article class="mb-3 d-flex row align-items-center p-3" v-for="item in products" v-if="item.price <= Number(maximum)">
         <figure class="col-sm-4 text-center">
           <img class="img-thumbnail img-fluid" :src="item.image" :alt="name" width="200" height="200" />
         </figure>
-        <div class="col">
+        <figcaption class="col">
           <h2 class="text-info">{{ item.name }}</h2>
           <p class="mb-0">{{ item.description }}</p>
           <p class="h5 float-right">${{ item.price }}</p>
-        </div>
+        </figcaption>
       </article>
     </section>
 

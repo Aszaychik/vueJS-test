@@ -1,4 +1,5 @@
 const dataProduct = {
+  maximum: 1280,
   products: [
     {
       "name": 'SmartPhone',
